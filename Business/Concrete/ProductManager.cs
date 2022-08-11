@@ -33,7 +33,7 @@ namespace Business.Concrete
         public IDataResult<List<Product>> GetAll()
         {
             //business codes
-            if (DateTime.Now.Hour==22)
+            if (DateTime.Now.Hour==7)
             {
                 return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
             }
