@@ -14,6 +14,11 @@ namespace WebAPI.Controllers
     {
         IProductService _productService;
 
+        [HttpGet("get")]
+        public string Get()
+        {
+            return "merhaba";
+        }
         public ProductsController(IProductService productService)
         {
             _productService = productService;
