@@ -45,8 +45,8 @@ namespace WebAPI
                     builder => builder.WithOrigins("http://localhost:3000"));
             });
 
-          
 
+            services.AddCors();//Frontend baðlantý izni
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -77,6 +77,7 @@ namespace WebAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseCors(builder=>builder.WithOrigins("http://localhost:52573").AllowAnyHeader());
 
             app.UseHttpsRedirection();
 
